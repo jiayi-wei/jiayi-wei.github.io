@@ -93,6 +93,52 @@
             </div>
         </div>
         <div class="container">
+			<div class="row">
+                <div class="space"></div>
+				<div class="row">
+					<h2 id="project"><b>Denoising for cosmic microwave background(CMB) signal with autoencoders.</b></h2>
+					<div class="col-md-5 text-center">
+						<img src="img/block_4.png" alt="">
+						<div class="space"></div>
+					</div>
+					<div class="col-md-7">
+						<p>In this project, my target is to remove tough noise on the data, which is called 'all'. Using the approach of cross-connect, the data of noise 
+						is obtained from the first autoencoder whose input is the 'all'. Sequentially, the gap between the 'all' and the 'noise' is the input of next autoencoder.
+						A fantastic result has been acquired from the stack of autoencoders.</p>
+						<p>view more on <a target="_blank" href="https://github.com/jiayi-wei/Denoising-for-cosmic-microwave-background-CMB-signal">Github</a></p>
+						<ul class="list-unstyled">
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Cosidering about the characteristic of these data, I decided to cross-connect the layers nearby 
+							the input and the layers nearby the output to get more informations as I hoped.</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Due to that the gap between the 'all' and the 'noise' gotten from first autoencoder is so similar 
+							with the real cmb that i decide to put less convolution layers in the second autpencoder.</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Respectively, the mean absolute error(mae) and mean square error are 8 and 450.</li>
+						</ul>
+						<div class="space"><p><br></br></p></div>
+					</div>
+				</div>
+				<div class="space"></div>
+			</div>
+			
+			<div class="row">
+				<h2><b>Detection of Road Signs with Faster-RCNN</b></h2>
+				<div class="col-md-7">
+					<p>This is a project about detecting road signs on the highway. Considering the acurracy and speed, Faster-RCNN is chosen by me to realize my target.</p> 
+					<p>view more on <a target="_blank" href="https://github.com/jiayi-wei/road-sign-detection">Github</a></p>
+					<br></br><a href="#contact">Contact me</a> if want to view more or get my data.</p>
+						<ul class="list-unstyled">
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Collect data of road sign from website, then lable it by myself. Split it as train set and test set.</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Train model on my data with VGG-16 as the bottom. After sixty thousand times the model converges.</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Finetune the model on much harder dataset.</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Achieve state of the art result in this occasion.</li>
+						</ul>
+				</div>
+				<div class="col-md-5 text-center">
+					<img src="img/129.jpg" alt="">
+					<div class="space"></div>
+					<div class="space"><p><br></br><br></br></p></div>
+				</div>
+			</div>
+			
             <div class="row">
                 <div class="space"></div>
 				<div class="row">
@@ -184,7 +230,7 @@
                     <a target= "_blank" href="https://github.com/jiayi-wei"><i class="fa fa-github fa-3x sr-contact"></i></a>
                 </div>
 				<div class="col-lg-2 text-center">
-                    <a target= "_blank" href="https://cn.linkedin.com/in/嘉毅-魏-852a35132"><i class="fa fa-linkedin fa-3x sr-contact"></i></a>
+                    <a target= "_blank" href="https://cn.linkedin.com/in/??-?-852a35132"><i class="fa fa-linkedin fa-3x sr-contact"></i></a>
                 </div>
 				<div class="col-lg-2 text-center">
                     <a target= "_blank" href="http://weibo.com/2259949191/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1"><i class="fa fa-weibo fa-3x sr-contact"></i></a>
@@ -195,7 +241,7 @@
 	
 	<div class="container">
 		<div class="row">
-			<p class="text-center">Copyright © 2016 by Jiayi Wei.</p>
+			<p class="text-center">Copyright � 2016 by Jiayi Wei.</p>
 		</div>
 	</div>
 
