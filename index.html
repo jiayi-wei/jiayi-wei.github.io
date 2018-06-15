@@ -75,9 +75,7 @@
                 <hr>
                 <p><font color="#FFFFFF"><b>Writing nice code is not just for a better work, but for a more wonderful world.<br><br>I am currently 
 				a master student in Electrical Engineering at Beijing University of Posts and Telecommunications. What is attracting my interesting
-				is machine learning and deep learning. The pace of my progress in machine learning should lengthe my stride so that follow up the 
-				development of machine learning. What's more, I have had a grasp of front end and server side, although there are numerous waiting 
-				me to learn.<br><br>If you share the same interesting with me, let's have a <a href="#contact">talk</a>!</b></font></p>
+				is machine learning, deep learning and espicailly autonomous driving. The pace of my progress in machine learning should lengthe my stride so that follow up the development of machine learning. What's more, I have had a grasp of front end and server side, although there are numerous waiting me to learn.<br><br>If you share the same interesting with me, let's have a <a href="#contact">talk</a>!</b></font></p>
             </div>
         </div>
     </header>
@@ -92,11 +90,55 @@
 				<div class="space"><p><br></br><br></br></p></div>
             </div>
         </div>
+        
         <div class="container">
+        	<div class="row">
+                <div class="space"></div>
+				<div class="row">
+					<h2 id="project"><b>Unsupervised Anomaly Detection for Traffic Surveillance.</b></h2>
+					<div class="col-md-5 text-center">
+						<img src="img/whole_system.png" alt="">
+						<div class="space"></div>
+					</div>
+					<div class="col-md-7">
+						<p>This work is for NVIDIA AI CITY CHALLENGE track-2, traffic anomaly detection in surveillance video. Becuase of the plenty of impediments, like the lack of labled data, poor quality of video and numerous scenes, it will be almost impossible to detect abnormal vehicles directly. Therefore, we figured out the nature among all broken vehicles, that is whenever an anomaly happens, it will lead to at least one stopped vehicle, which becomes part of the video background. According to this finding, we designed a well frame and ranks <br>2nd</br> in the final competition.</p>
+						<p>view more on <a target="_blank" href="https://github.com/NVIDIAAICITYCHALLENGE/2018AICITY_MCPRL">Github.</a></p>
+						<p>Also, you can find the demo video<a target="_blank" href="https://youtu.be/WTD2S94ZUrc">here.</a></p>
+						<ul class="list-unstyled">
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed a novel unsupervised system to detection vehicle anomalies in traffic surveillance videos that could adapt to various scenes without special treatment</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Implemented Faster-RCNN to detect vehicles in multi-scaled background frames which were captured by MOG2, and leveraged VGG as a powerful classifier to eliminate false detected bounding boxes</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed a decision module to determine anomalous vehicles based on bounding boxes and used ResNet trained with triplet loss to complete similarity comparison when meeting camera-movement or vehicles waiting for traffic light </li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Achieved 0.81 F1-score and 10.2 RMSE in traffic anomaly detection on NVIDIA AI CITY Challenge track-2 dataset </li>
+						</ul>
+						<div class="space"><p><br></br></p></div>
+					</div>
+				</div>
+				<div class="space"></div>
+			</div>
+
+			<div class="row">
+				<h2><b>License Plates Recognition Based on Segmentation and Multi-Label Classification</b></h2>
+				<div class="col-md-7">
+					<p>As we all know, almost all existing license plate recognition algorithm can only be utilized in homegenenuous scenes. Therefore, I built a license plate recognition system to recognize Chinese license plate from multi-oriented images which could handle all kinds of scenes in real time with great robustness. My system can work in real time and real life without any specious modification.</p> 
+					<p>view more on <a target="_blank" href="">Github</a></p>
+					<br></br><a href="#contact">Contact me</a> if want to view more or get my data.</p>
+						<ul class="list-unstyled">
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Retrained a FCN, initialized with ResNet, using 1k manually annotated vehicle images for license plate segmentation on wild vehicle images</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed a CNN for Multi-label task with shared FC layer for all labels to end-to-end recognize vehicle ID on rectangular license plate images after perspective transformation</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Achieved 98.1% recognition accuracy with speed of 50 imgs/sec. I believe more labled data can drive my model more powerfule, considering only 1k for segmentation and 2k for recognition training</li>
+						</ul>
+				</div>
+				<div class="col-md-5 text-center">
+					<img src="img/LP.jpg" alt="">
+					<div class="space"></div>
+					<div class="space"><p><br></br><br></br></p></div>
+				</div>
+			</div>
+
 			<div class="row">
                 <div class="space"></div>
 				<div class="row">
-					<h2 id="project"><b>Denoising for cosmic microwave background(CMB) signal with autoencoders.</b></h2>
+					<h2 id="project"><b>Denoising for Cosmic Microwave Background(CMB) signal with Auto-Encoders.</b></h2>
 					<div class="col-md-5 text-center">
 						<img src="img/block_4.png" alt="">
 						<div class="space"></div>
@@ -241,7 +283,7 @@
 	
 	<div class="container">
 		<div class="row">
-			<p class="text-center">Copyright © 2016 by Jiayi Wei.</p>
+			<p class="text-center">Copyright Â© 2016 by Jiayi Wei.</p>
 		</div>
 	</div>
 
