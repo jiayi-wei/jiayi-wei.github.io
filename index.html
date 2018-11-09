@@ -74,7 +74,7 @@
                 <h1 id="homeHeading">Hi! This is Jiayi Wei</h1>
                 <hr>
                 <p><font color="#FFFFFF"><b>Writing nice code is not just for a better work, but for a more wonderful world.<br><br>I am currently 
-				a master student in Electrical Engineering at Beijing University of Posts and Telecommunications. What is attracting my interesting
+				a master student working in Computer Vision at Beijing University of Posts and Telecommunications. What is attracting my interesting
 				is machine learning, deep learning and espicailly autonomous driving. The pace of my progress in machine learning should lengthe my stride so that follow up the development of machine learning. What's more, I have had a grasp of front end and server side, although there are numerous waiting me to learn.<br><br>If you share the same interesting with me, let's have a <a href="#contact">talk</a>!</b></font></p>
             </div>
         </div>
@@ -95,6 +95,46 @@
         	<div class="row">
                 <div class="space"></div>
 				<div class="row">
+					<h2 id="project"><b>Advanced Driving Assistance System (ADAS)</b></h2>
+					<div class="col-md-5 text-center">
+						<img src="img/adas_.jpg" alt="">
+						<div class="space"></div>
+					</div>
+					<div class="col-md-7">
+						<p>This is a project I participated during the internship at Sensetime. Our ADAS system is used in Honda self-driving. My job is to improved the performance of detection model on traffic objects, including traffic light (four status), traffic sign (20 categories) and forward collosion warning (vehicle, human, non-motorized vehicles). Besides, due to the limited computation resource, I fused all model together by using shared convolution layers while maintaining the perfect performance.</p>
+						<p>This project cannot be put on Git cause of the policy, but if you want learn more, you can <a href="#contact">contact me</a></p>
+						<ul class="list-unstyled">
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Used kinds of strategies to improve the detection performance to make up for the limited computation resource on the deployed device; strategies include modifying the backbone, data argumentation, redesign of the logic of RPN (region proposal network), etc.</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Shared the backbone across detection headers (RPN and Fast-RCNN) for different tasks considering each dataset just have one kind of annotation, like traffic signs, traffic light, FCW (forward collision warning); trained the whole model on all tasks at the same, using various strategies to maintain the performance</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Deployed the fused model in Honda self-driving system</li>
+						</ul>
+						<div class="space"><p><br></br></p></div>
+					</div>
+				</div>
+				<div class="space"></div>
+			</div>
+
+			<div class="row">
+				<h2><b>Understanding Vehicle Density in Traffic Surveillance</b></h2>
+				<div class="col-md-7">
+					<p>When talking about understanding the traffic, the number of vehicles on road is a key to describe the congestion degree. While, it is hard for detection models to predict in hard cases (like traffic jam or bad weather). Therefore, borrowing the ability of crowd density estimation methods to work in extreme congestion, I designed a FCN, whose backbone is inception-v3, to  predict the density map. To obtain the accurate estimation, during training I implement two losses on density map and bias respectively. The bias meaned the difference between the ground truth of total number and the number on predicted density map. Finally, my model outperformed the detection based method and can run in real-time.</p> 
+					<p>view more on <a target="_blank" href="">Github</a></p>
+						<ul class="list-unstyled">
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Used a density prediction model with better robustness for traffic jam and low-quality video to obtain the total number of vehicles in real-time</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed a FCN with inception-v3 as backbone to predict density map</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Trained the model with two losses to restrain on density map and total number respectively</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Achieved 94.2% accuracy with speed of 20fps and outperformed the detection-based model</li>
+						</ul>
+				</div>
+				<div class="col-md-5 text-center">
+					<img src="img/density_.jpg" alt="">
+					<div class="space"></div>
+					<div class="space"><p><br></br><br></br></p></div>
+				</div>
+			</div>
+        	<div class="row">
+                <div class="space"></div>
+				<div class="row">
 					<h2 id="project"><b>Unsupervised Anomaly Detection for Traffic Surveillance.</b></h2>
 					<div class="col-md-5 text-center">
 						<img src="img/nvidia.png" alt="">
@@ -105,10 +145,11 @@
 						<p>view more on <a target="_blank" href="https://github.com/NVIDIAAICITYCHALLENGE/2018AICITY_MCPRL">Github.</a></p>
 							Also, you can find the demo video <a target="_blank" href="https://youtu.be/WTD2S94ZUrc">here</a>, and paper is <a target="_blank" href="http://openaccess.thecvf.com/content_cvpr_2018_workshops/papers/w3/Wei_Unsupervised_Anomaly_Detection_CVPR_2018_paper.pdf">here</a> .</p>
 						<ul class="list-unstyled">
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed a novel unsupervised system to detection vehicle anomalies in traffic surveillance videos that could adapt to various scenes without special treatment</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Implemented Faster-RCNN to detect vehicles in multi-scaled background frames which were captured by MOG2, and leveraged VGG as a powerful classifier to eliminate false detected bounding boxes</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed a decision module to determine anomalous vehicles based on bounding boxes and used ResNet trained with triplet loss to complete similarity comparison when meeting camera-movement or vehicles waiting for traffic light </li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Achieved 0.81 F1-score and 10.2 RMSE in traffic anomaly detection on NVIDIA AI CITY Challenge track-2 dataset </li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed a novel unsupervised system to detect vehicle anomalies in traffic surveillance videos that could adapt to various scenes without special treatment</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Utilized MOG2 to capture the background frames and implement Faster-RCNN to detect vehicle in background frames, as the abnormal vehicles stay in the video background for a long time; trained a VGG as the classifier to eliminate false detected bounding boxes</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Trained a ReID model, whose backbone is ResNet, with triplet loss to complete the similarity comparison when meeting camera-movement or vehicles waiting for traffic light</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed a decision model to determine whether a detected vehicle is belonged to anomaly according to the bounding boxes obtained above</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Achieved 0.81 F1-score and 10.2 RMSE in traffic anomaly detection dataset on NVIDIA AI CITY Challenge</li>
 						</ul>
 						<div class="space"><p><br></br></p></div>
 					</div>
@@ -121,39 +162,38 @@
 				<div class="col-md-7">
 					<p>As we all know, almost all existing license plate recognition algorithm can only be utilized in homegenenuous scenes. Therefore, I built a license plate recognition system to recognize Chinese license plate from multi-oriented images which could handle all kinds of scenes in real time with great robustness. My system can work in real time and real life without any specious modification.</p> 
 					<p>view more on <a target="_blank" href="">Github</a></p>
-					<br></br><a href="#contact">Contact me</a> if want to view more or get my data.</p>
+					<p><a href="#contact">Contact me</a> if want to view more or get my data.</p>
 						<ul class="list-unstyled">
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Retrained a FCN, initialized with ResNet, using 1k manually annotated vehicle images for license plate segmentation on wild vehicle images</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed a CNN for Multi-label task with shared FC layer for all labels to end-to-end recognize vehicle ID on rectangular license plate images after perspective transformation</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Achieved 98.1% recognition accuracy with speed of 50 imgs/sec. I believe more labled data can drive my model more powerfule, considering only 1k for segmentation and 2k for recognition training</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Built a license plate recognition system to detect and recognize multi-oriented Chinese license plate in kinds of scenes in real time with great robustness</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Trained a segmentation model to perform pixel-wise classification and obtain the pure license plate area on wild vehicle images, to avoid the inference of background caused by using detection to locate license plate</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Obtained the quadrilateral envelope according to the context hull of the license plate area, and then transform the quadrilateral to rectangle through perspective transformation.</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed a CNN with CTC loss to recognize license plate characters end-to-end on rectangular license plate images; trained the classification model on 100k simulated images and fine-tuned on real data due to the lack of annotation</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Achieved 98.1% recognition accuracy from vehicle image to vehicle ID with speed of 50fps</li>
 						</ul>
 				</div>
 				<div class="col-md-5 text-center">
-					<img src="img/r.jpg" alt="">
-					<div class="space"></div>
-					<div class="space"><p><br></br><br></br></p></div>
+					<img src="img/lp.jpg" alt="">
+					<div class="space"><br></br></div>
 				</div>
 			</div>
 
 			<div class="row">
                 <div class="space"></div>
 				<div class="row">
-					<h2 id="project"><b>Denoising for Cosmic Microwave Background(CMB) signal with Auto-Encoders.</b></h2>
+					<h2 id="project"><b>Denoising for Cosmic Microwave Background(CMB) Signal with Auto-Encoders.</b></h2>
 					<div class="col-md-5 text-center">
 						<img src="img/block_4.png" alt="">
 						<div class="space"></div>
 					</div>
 					<div class="col-md-7">
-						<p>In this project, my target is to remove tough noise on the data, which is called 'all'. Using the approach of cross-connect, the data of noise 
-						is obtained from the first autoencoder whose input is the 'all'. Sequentially, the gap between the 'all' and the 'noise' is the input of next autoencoder.
+						<p>In this project, my target is to remove tough noise on the data, which is called 'all'. Using the approach of res-connect, the signal of noise 
+						is obtained from the first autoencoder whose input is the 'all' signal. Sequentially, the difference between the 'all' signal and the 'noise' signal is the input of next autoencoder.
 						A fantastic result has been acquired from the stack of autoencoders.</p>
 						<p>view more on <a target="_blank" href="https://github.com/jiayi-wei/Denoising-for-cosmic-microwave-background-CMB-signal">Github</a></p>
 						<ul class="list-unstyled">
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Cosidering about the characteristic of these data, I decided to cross-connect the layers nearby 
-							the input and the layers nearby the output to get more informations as I hoped.</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Due to that the gap between the 'all' and the 'noise' gotten from first autoencoder is so similar 
-							with the real cmb that i decide to put less convolution layers in the second autpencoder.</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Respectively, the mean absolute error(mae) and mean square error are 8 and 450.</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed an Auto-Encoder Network using Residual Connection and Dense Connection which could efficiently reduce the background noise</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Trained two models with same architecture with MSE and MAE loss to learn the noise from original images and to learn CMB signal from the noise free images respectively; connected the two model together using residual connection</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Achieved around 450 MSE and 8 MAE on the evaluation dataset and a decent PSD compared with traditional methods</li>
 						</ul>
 						<div class="space"><p><br></br></p></div>
 					</div>
@@ -162,22 +202,22 @@
 			</div>
 			
 			<div class="row">
-				<h2><b>Detection of Road Signs with Faster-RCNN</b></h2>
+				<h2><b>Traffic Signs Detection </b></h2>
 				<div class="col-md-7">
-					<p>This is a project about detecting road signs on the highway. Considering the acurracy and speed, Faster-RCNN is chosen by me to realize my target.</p> 
+					<p>This is a project about detecting traffic signs on the highway. Considering the acurracy and speed, I chose the Faster-RCNN to realize the target.</p> 
 					<p>view more on <a target="_blank" href="https://github.com/jiayi-wei/road-sign-detection">Github</a></p>
-					<br></br><a href="#contact">Contact me</a> if want to view more or get my data.</p>
+					<a href="#contact">Contact me</a> if want to view more or get my data.</p>
 						<ul class="list-unstyled">
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Collect data of road sign from website, then lable it by myself. Split it as train set and test set.</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Train model on my data with VGG-16 as the bottom. After sixty thousand times the model converges.</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Finetune the model on much harder dataset.</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Achieve state of the art result in this occasion.</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed a traffic sign detection system with high accuracy and fast speed</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Annotated 10K+ bounding boxes on 5k+ images captured in various scenes</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Trained Faster-RCNN detection model with 80% labeled data and achieved 97.4% accuracy on evaluation dataset</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Deployed the traffic sign detection system on Windows using QT and hosted the detection model on Linux server</li>
 						</ul>
 				</div>
 				<div class="col-md-5 text-center">
-					<img src="img/129.jpg" alt="">
+					<img src="img/traffic_sign.jpg" alt="">
 					<div class="space"></div>
-					<div class="space"><p><br></br><br></br></p></div>
+					<div class="space"><br></br></div>
 				</div>
 			</div>
 			
@@ -186,13 +226,11 @@
 				<div class="row">
 					<h2 id="project"><b>Lane detection for moving vehicle</b></h2>
 					<div class="col-md-5 text-center">
-						<img src="img/lane_detection.png" alt="">
+						<img src="img/lane_detection_.jpg" alt="">
 						<div class="space"></div>
 					</div>
 					<div class="col-md-7">
-						<p>This is a project I finished during my intership at Sansumg Electric(Beijing). Because of the mobile is where the program will be used, the runtime and size are both important. 
-						The idea is to find the line which could be lane and then consider about the change of weight on location of lane. Finally, it become possible to figure out the lane or whether the
-						car is changing lanes.</p>
+						<p>This is a project I completed during my intership at Sansumg China. Because of the mobile is where the program will be used, the runtime and size are equally important. The main idea is to find the line which could be lane and then consider about the change of weight on location of lane. Finally, we could figure out the lane or whether the car is changing lanes.</p>
 						<p>view more on <a target="_blank" href="https://github.com/jiayi-wei/lane_detection">Github</a></p>
 						<ul class="list-unstyled">
 							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Design a algorithm for detecting lane in a moving car with short time and high accuracy.</li>
@@ -208,8 +246,7 @@
 			<div class="row">
 				<h2><b>Video Face Recognition based on Deep Learning</b></h2>
 				<div class="col-md-7">
-					<p>I began touch deep learning with completing this project. Firstly, I kenw nothing about CNN. In the wake of carrying out the project,
-					I became acquainted with these matters. Most of time spent in this project is on training my model about video face recongnition. 
+					<p>I began to touch deep learning with completing this project. Firstly, I kenw nothing about CNN. In the wake of carrying out the project, I became acquainted with these matters. Most of time spent in this project is on training my model about video face recongnition. 
 					<br></br><a href="#contact">Contact me</a> if want to view more. The project is too large to be Gited because of the data.</p>
 						<ul class="list-unstyled">
 							<li><i class="fa fa-caret-right pr-10 text-colored"></i> Completed a demo which can show the the identified face appearing in the demo video.</li>
