@@ -101,21 +101,21 @@
 
         
              <div class="row">
-					<h2 id="project"><b>Fake Traffic Sign Image Generation for Detection Model Training</b></h2>
+					<h2 id="project"><b>Data Augmentation for Rare Traffic Signs to Boost the Performance of Detection</b></h2>
 					<div class="col-md-5 text-center">
 						<img src="img/stylize.jpg" alt="">
 						<div class="space"></div>
 					<div class="space"><p><br></br></p></div>
 
 					</div>
-					<div class="col-md-7">
+					<div class="col-md-7"> 
 						<p>When training the detection model for traffic signs, because it is extremely hard to collect photos of some categories, we need to explore a new way to obtain enough data to train a robust and accurate model. Here, we initialized research on the application of style transformation on traffic object generation, which means to produce scarce traffic sign categories in real traffic scenes photos. </p>
             			<p>Because of the policy, no detail or code can be shared publicly.</p>
 						<ul class="list-unstyled">
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed a strategy to place traffic sign object at the proper position in real images</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Implemented the Whitening and Coloring Transform (WCT) on the pasted object to obtain the style of the real image</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Utilized a suitable smoothing algorithm on stylized image to remain content in local term and to keep the style in  general term</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Improve the recall hugely from 35% (model trained with limited data) to 94%, 4% lower than the performance of the model trained with enough real data, at 0.1 FPPI on the test dataset</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Initiated research on style transfer to generate rare traffic signs in real traffic scenes, providing more balanced dataset in the following task of traffic sign detection</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Analyzed distribution of traffic signs from 6 categories in 500k images of real traffic scenes, created synthesized images by replacing existing ones with minor traffic signs to obtain balanced class in each category</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Implemented WCT (whitening and coloring transform) and local smoothing algorithm with Pytorch to transfer style from context to traffic sign objects in the synthesized images</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Achieved 94% recall rate in traffic sign detection using the augmented balanced images (35% using original imbalanced dataset and 98% using real balanced dataset under the same 0.1 FPPI)</li>
 						</ul>
 						<div class="space"><p><br></br></p></div>
 					</div>
@@ -129,7 +129,7 @@
 					<p>View more on <a target="_blank" href="https://github.com/NVIDIAAICITYCHALLENGE/2019AICITY_Code_From_Top_Teams">Github</a> or 
 						<a target="_blank" href="http://openaccess.thecvf.com/content_CVPRW_2019/papers/AI%20City/Chang_AI_City_Challenge_2019_--_City-Scale_Video_Analytics_for_Smart_CVPRW_2019_paper.pdf">paper</a>.</p>
 						<ul class="list-unstyled">
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Held weekly Skype meetings, contributed to the 1st and the 2nd track and covered the work for track-3</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Collaborated with professors and students from three universities; held and participated in weekly meetings; independently accomplished the track-3 task and contributed to track-1 and track-2</li>
 							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Polished the framework I proposed in last year's Challenge for detection and tracking</li>
 							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Trained a FPN-R-FCN vehicle detection model on more vehicle data and improve the classification model</li>
 							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Replaced the simple IoU strategy with DaSiamRPN single object tracking algorithms to obtain more accurate timestamps during backtracking in origin video</li>
@@ -153,12 +153,13 @@
 						<div class="space"></div>
 					</div>
 					<div class="col-md-7">
-						<p>This is a project I participated during the internship at Sensetime. Our ADAS system is used in Honda self-driving. My job is to improved the performance of detection model on traffic objects, including traffic light (four status), traffic sign (20 categories) and forward collosion warning (vehicle, human, non-motorized vehicles). Besides, due to the limited computation resource, I fused all model together by using shared convolution layers while maintaining the perfect performance.</p>
+						<p>This is a project I participated during the internship at Sensetime. Our ADAS system is used in Honda self-driving. My job is to improved the performance of detection model on traffic objects, including traffic light (four status), traffic sign (20 categories) and PVB (pedestrain, vehicle, bike). Besides, due to the limited computation resource, I fused all model together by using shared convolution layers while maintaining the perfect performance.</p>
 						<p>This project cannot be put on Git cause of the policy.</p>
 						<ul class="list-unstyled">
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Used kinds of strategies to improve the detection performance to make up for the limited computation resource on the deployed device; strategies include modifying the backbone, data argumentation, redesign of the logic of RPN (region proposal network), etc.</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Shared the backbone across detection headers (RPN and Fast-RCNN) for different tasks considering each dataset just have one kind of annotation, like traffic signs, traffic light, FCW (forward collision warning); trained the whole model on all tasks at the same, using various strategies to maintain the performance</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Deployed the fused model in Honda self-driving system</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Innovated a multi-task architecture in Caffe to accomplish three traffic object detection tasks simultaneously, namely PVB (Pedestrian, Vehicle and Bike) detection, traffic light detection and traffic sign detection</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Shared backbone across three detectors consisted of RPN and Fast R-CNN, which was updated by normalized gradients coming from different detectors</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Exploited mimic learning to refine detectors towards the performance of individually trained networks</li>
+              <li><i class="fa fa-caret-right pr-10 text-colered"></i>Met Honda’s requirements with significantly increased training and inference speed as well as reduced GPU storage</li>
 						</ul>
 						<div class="space"><p><br></br></p></div>
 					</div>
@@ -346,7 +347,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h1 class="section-heading">Let's Get In Touch!</h1>
                     <hr class="primary">
-                    <p>Here is my <a target="_blank" href="">resume</a>. Contact me, if you are insterested.</p>
+                    <p>Here is my <a target="https://drive.google.com/file/d/12aFo_Vy0Z7-0lCkIMOm3LXwbk8MyHCoF/view?usp=sharing" href="">resume</a>. Contact me, if you are insterested.</p>
                 </div>
 				<div class="col-lg-8 col-lg-offset-2 text-left">
 					<p><i class="fa fa-map-marker pr-10"></i>  UC Santa Cruz, Santa Cruz, California, USA, 95064</p>
