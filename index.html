@@ -74,12 +74,11 @@
             <div class="header-content-inner">
                 <h1 id="homeHeading">Hi! This is Jiayi Wei</h1>
                 <hr>
-                <p><font color="#FFFFFF"><b>Writing nice code is not just for a better work, but for a more wonderful world.<br><br>I am currently 
-				a master student working in Computer Vision at UC Santa Cruz. What attract me
-				are machine learning, deep learning and espicailly autonomous driving. I expect to follow up and contribute to the
-			development in the area of computer vision. What's more, I also have a grasp of knowledge on front end and server side, 
-			although there are still lots of stuff waiting me.<br><br>If you share the same interesting with me, let's have 
-			a <a href="#contact">talk</a>!</b></font></p>
+                <p><font color="#FFFFFF"><b>Writing nice code is not just for a better work, but for a more wonderful world.
+                	<br><br>I am currently a Software Engineer working on Shopping Search Engine at Google.
+                	What attract me the most is to solve real-life tasks with my machine learning and engineering knowledge. 
+                	What's more, I'm excited about the technology development and to learn something new everyday!
+                	<br><br>If you share the same interesting with me, let's have a <a href="#contact">talk</a>!</b></font></p>
             </div>
         </div>
     </header>
@@ -88,7 +87,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h1 class="section-heading">The projects I participated in</h1>
+                    <h1 class="section-heading">My Projects:</h1>
 					<hr class="primary">
                 </div>
 				<div class="space"><p><br></br><br></br></p></div>
@@ -99,9 +98,52 @@
         	<div class="row">
                 <div class="space"></div>
 
+
+            <div class="row">
+					<h2 id="project"><b>Visual Question Rewriting</b></h2>
+					<div class="col-md-5 text-center">
+						<img src="img/VQR.jpg" alt="">
+						<div class="space"></div>
+					<div class="space"><p><br></br></p></div>
+
+					</div>
+					<div class="col-md-7"> 
+						<p>This is a project I completed as my Master Project. When browsing the image related content online, questions or topics containing more details and emotion have higher possibility to receive attention. Unfortunately, people who are not good at it may suffer. To solve it, I proposed a new NLP task named Visual Language Rewriting (VQR) which reconstructs a bland question into a detailed and emotional style according to its paired image. For the VQR task, the ability on multi-modal understanding is required.</p>
+						<p>View more on <a target="_blank" href="https://github.com/jiayi-wei/Visual-Question-Rewrite">Github</a> or <a target="_blank" href="">paper</a>.</p>
+						<ul class="list-unstyled">
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Created a VQR dataset with 4k of bland-emotional sentences and image triples. All data are collected from Houzz.com and then are cleaned with de-emotionalizing and simplifying original sentence.</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Trained a Seq2Seq based model as our baseline with attention mechanism employed on both text sequence and visual feature extracted from encoder and object detector.</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed an advanced Transformer based model with the visual information as conditional input. The language generation task is viewed as a sentence completion task as UniLM's work.</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Both the auto and Amazon Turks evaluation proves the advancement of the Transformer+Vis model.</li>
+						</ul>
+						<div class="space"><p><br></br></p></div>
+					</div>
+				</div>
+			
+
+			<div class="row">
+				<h2><b>Virtual Wardrobe – Outfit Recommendation based on Style Match</b></h2>
+				<div class="col-md-7">
+					<p>This is a project I completed during Google Internship. The goal of this project is to help user to find out great outfit which could be achieved with apparels in their own wardrobe.</p> 
+						<ul class="list-unstyled">
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Recommended style-compatible apparels from the user’s virtual wardrobe to build outfits with user’s chosen apparel.</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Created a dataset of 200M apparel triples for apparel style compatibility model training, developed a neural network with triplet loss in TensorFlow, and achieved 0.94 AUC score on the test dataset with the best performance model.</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Designed the pipeline in C++ to utilize the trained model to select out style-compatible apparel in wardrobe which can achieve pretty outfits with user’s chosen apparel, and to retrieve visual examples for all potential outfits in the style corpus of 100M images</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Built multi demos for the whole project with multithreading on compatibility selection and low latency image retrieval</li>
+						</ul>
+				</div>
+				<div class="col-md-5 text-center">
+					<img src="img/Virtual_Wardrobe.jpg" alt="">
+					<div class="space"><br></br></div>
+					<div class="space"><p><br></br></p></div>
+
+				</div>
+			</div>
+
+
         
              <div class="row">
-					<h2 id="project"><b>Data Augmentation for Rare Traffic Signs to Boost the Performance of Detection</b></h2>
+					<h2 id="project"><b>Data Augmentation for Rare Traffic Signs to Boost the Detection Performance</b></h2>
 					<div class="col-md-5 text-center">
 						<img src="img/stylize.jpg" alt="">
 						<div class="space"></div>
@@ -109,11 +151,11 @@
 
 					</div>
 					<div class="col-md-7"> 
-						<p>When training the detection model for traffic signs, because it is extremely hard to collect photos of some categories, we need to explore a new way to obtain enough data to train a robust and accurate model. Here, we initialized research on the application of style transformation on traffic object generation, which means to produce scarce traffic sign categories in real traffic scenes photos. </p>
+						<p>This project is part of my Sensetime internship. When training the traffic sign detection model for self-driving vehicles, because of the hardness to create a dataset with all categories balanced, I research to generate synthesized images fo rare categories. Here, we initialized with the application of style transformation on traffic object generation.</p>
             			<p>Because of the policy, no detail or code can be shared publicly.</p>
 						<ul class="list-unstyled">
 							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Initiated research on style transfer to generate rare traffic signs in real traffic scenes, providing more balanced dataset in the following task of traffic sign detection</li>
-							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Analyzed distribution of traffic signs from 6 categories in 500k images of real traffic scenes, created synthesized images by replacing existing ones with minor traffic signs to obtain balanced class in each category</li>
+							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Analyzed distribution of traffic signs from 6 categories in 500k images of real traffic scenes, created synthesized images by replacing original traffic signs with rare ones and achieved balance in each category</li>
 							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Implemented WCT (whitening and coloring transform) and local smoothing algorithm with Pytorch to transfer style from context to traffic sign objects in the synthesized images</li>
 							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Achieved 94% recall rate in traffic sign detection using the augmented balanced images (35% using original imbalanced dataset and 98% using real balanced dataset under the same 0.1 FPPI)</li>
 						</ul>
@@ -153,7 +195,7 @@
 						<div class="space"></div>
 					</div>
 					<div class="col-md-7">
-						<p>This is a project I participated during the internship at Sensetime. Our ADAS system is used in Honda self-driving. My job is to improved the performance of detection model on traffic objects, including traffic light (four status), traffic sign (20 categories) and PVB (pedestrain, vehicle, bike). Besides, due to the limited computation resource, I fused all model together by using shared convolution layers while maintaining the perfect performance.</p>
+						<p>This is a project during the internship at Sensetime. Our ADAS system is used in Honda self-driving. My job is to improved the performance of detection model on traffic objects, including traffic light (four status), traffic sign (20 categories) and PVB (pedestrain, vehicle, bike). Besides, due to the limited computation resource, I fused all model together by using shared convolution layers while maintaining the perfect performance.</p>
 						<p>This project cannot be put on Git cause of the policy.</p>
 						<ul class="list-unstyled">
 							<li><i class="fa fa-caret-right pr-10 text-colored"></i>Innovated a multi-task architecture in Caffe to accomplish three traffic object detection tasks simultaneously, namely PVB (Pedestrian, Vehicle and Bike) detection, traffic light detection and traffic sign detection</li>
@@ -347,10 +389,10 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h1 class="section-heading">Let's Get In Touch!</h1>
                     <hr class="primary">
-                    <p>Here is my <a target="https://drive.google.com/file/d/12aFo_Vy0Z7-0lCkIMOm3LXwbk8MyHCoF/view?usp=sharing" href="">resume</a>. Contact me, if you are insterested.</p>
+                    <p>Here is my <a target="https://drive.google.com/file/d/17aUUHORMEW1Y82-M8y9jmb4ZVXSEWzBt/view?usp=sharing" href="">resume</a>. Contact me, if you are insterested.</p>
                 </div>
 				<div class="col-lg-8 col-lg-offset-2 text-left">
-					<p><i class="fa fa-map-marker pr-10"></i>  UC Santa Cruz, Santa Cruz, California, USA, 95064</p>
+					<p><i class="fa fa-map-marker pr-10"></i>  Cupertino, California, USA, 95014</p>
 					<p><i class="fa fa-phone pr-10"></i>  +1 831-400-7538</p>
 					<p><i class="fa fa-envelope-o pr-10"></i>  weijiayi1217@gmail.com<br></br></p>
 				</div>
@@ -372,7 +414,7 @@
 	
 	<div class="container">
 		<div class="row">
-			<p class="text-center">Copyright © 2019 by Jiayi Wei.</p>
+			<p class="text-center">Copyright © 2021 by Jiayi Wei.</p>
 		</div>
 	</div>
 
